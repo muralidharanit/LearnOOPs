@@ -6,6 +6,10 @@ namespace Interface
     {
         static void Main(string[] args)
         {
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Black;
+
             ICustomer basicCustomer = new BasicCustomer();
             Console.WriteLine("Basic customer discount : {0}", basicCustomer.GetDiscount());
 
@@ -25,7 +29,7 @@ namespace Interface
         //string _myField;
 
         //this is a property and allowd inside the interface.
-        //string myField { get; set; }
+        // string myField { get; set; }
         int GetDiscount();
     }
 

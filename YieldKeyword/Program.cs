@@ -8,7 +8,7 @@ namespace YieldKeyword
         static void Main(string[] args)
         {
             Console.WriteLine("Get the Even numbers using list ");
-            GetEvenNumbersUsingList(50);
+            //GetEvenNumbersUsingList(50);
 
             Console.WriteLine();
             Console.WriteLine("===================================");

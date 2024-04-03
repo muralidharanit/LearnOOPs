@@ -10,8 +10,14 @@ namespace Polymorphism
     {
         static void Main(string[] args)
         {
-            //Employee employee = new Employee();
-            //Console.WriteLine("Base Employee GetLeaves : {0}", employee.GetLeaves());
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Black;
+            // Not possible to create a instance for abstract Employee class.
+            // Employee employee = new Employee();
+            // Console.WriteLine("Base Employee GetLeaves : {0}", employee.GetLeaves());
+
+
 
             Employee fullTimeEmployee = new FullTimeEmployee();
             Console.WriteLine("Full time Employee GetLeaves : {0}", fullTimeEmployee.GetLeaves());
@@ -19,9 +25,18 @@ namespace Polymorphism
             Employee partTimeEmployee = new PartTimeEmployee();
             Console.WriteLine("Part time Employee GetLeaves : {0}", partTimeEmployee.GetLeaves());
 
+            Employee intershipEmployee = new IntershipEmployee();
+            Console.WriteLine("Intership Employee GetLeaves : {0}", intershipEmployee.GetLeaves());
+
             Console.ReadLine();
         }
     }
+
+    // empty abstract class 
+    public abstract class Employee1
+    {
+    }
+
 
     public abstract class Employee
     {
@@ -35,10 +50,9 @@ namespace Polymorphism
         // It is not compulsory to implement them in the derived class.
         public virtual int GetLeaves()
         {
-            Console.WriteLine("I am Employee class GetLeaves");
             return 5;
         }
-
+        
         // Salary must be paid to all employees, including interns,
         // so it should be compulsory to implement it in the derived class.
         public abstract int GetSalary();       
@@ -71,11 +85,11 @@ namespace Polymorphism
         }
     }
 
-    public class Inters : Employee
+    public class IntershipEmployee : Employee
     {
         public override int GetSalary()
         {
-            throw new NotImplementedException();
+            return 3;
         }
     }
 }

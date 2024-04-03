@@ -12,12 +12,16 @@ namespace ConstAndReadonly
             Sample sample1 = new Sample(100);
             Console.WriteLine("Read only value of myvar1 : {0}", sample1.myvar1);
 
-            //If try to assign value to readonly variable provides an compile time error.
+            //If try to assign value to readonly variable provides a compile time error.
             //sample.myvar1 = 10;
 
             // const by default its a static, to access the value, object is not required.
             int myConst = Sample.myConst;
-            Console.WriteLine("Read only value of myvar1 : {0}", myConst);
+
+            // to access "readonly" you need create object, or mark it as "static readonly"
+            // int myReadonly = Sample.myvar1 (compile time error since declared with out static) 
+
+            Console.WriteLine("Read only value of myConst : {0}", myConst);
 
             Console.ReadLine();
         }
